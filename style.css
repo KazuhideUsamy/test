@@ -1,0 +1,612 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+}
+
+:root {
+    --color-white: #fff;
+    --color-black: #333333;
+    --color-blue: #263B60;
+    --color-beige: #efe8dd;
+    --en-font: "linotype-didot", serif;
+    --jp-font: "kinuta-maruminold-stdn", serif;
+}
+
+#splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
+    transition: opacity 2s ease-in-out;
+}
+
+#splash_logo {
+    width: 30vw;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3,
+h4,
+p,
+a,
+dl,
+dt,
+td,
+address,
+.activities_navigation li {
+    font-family: var(--jp-font);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2em;
+    letter-spacing: calc(1rem * 0.2);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt" 1;
+    line-break: anywhere;
+    position: relative;
+    z-index: 900;
+}
+
+h2,
+span {
+    color: var(--color-white);
+    font-style: normal;
+    position: relative;
+    z-index: 900;
+
+}
+
+h2 {
+    font-family: var(--en-font);
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+h2::before {
+    content: "-";
+    display: inline-block;
+}
+
+h2::after {
+    content: "-";
+    display: inline-block;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h4 {
+    margin-top: 3em;
+}
+
+li {
+    list-style: none;
+}
+
+time {
+    margin-right: 1em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+address {
+    color: var(--color-black);
+    margin-bottom: 1em;
+}
+
+.section_content {
+    position: relative;
+    padding-bottom: 10vh;
+}
+
+#activities .section_content {
+    padding-bottom: 20vh;
+}
+
+#plan .section_content {
+    padding-bottom: 20vh;
+}
+
+#activities .bbq_content {
+    padding-bottom: 60vh;
+}
+
+.header_navigation {
+    position: absolute;
+    top: 2em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40vw;
+    z-index: 100;
+}
+
+.header_navigation ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_navigation ul li{
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.header_navigation ul li a {
+    font-family: var(--en-font);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--color-white);
+}
+
+.header_navigation ul li::before {
+    background: var(--color-white);
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+}
+
+@media (any-hover: hover) {
+    .header_navigation ul li:hover::before {
+        transform-origin: left top;
+        transform: scale(1, 1);
+    }
+}
+
+.hero_area {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    z-index: 0;
+}
+
+.hero_area img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hero_logo {
+    position: absolute;
+    width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+.text_container {
+    width: 32vw;
+    margin: 0 auto;
+    padding: 3rem 0;
+    color: var(--color-white);
+}
+
+.text_container p {
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+
+.text_container .not {
+    margin-bottom: 0;
+}
+
+.label {
+    display: block;
+    text-align: center;
+    font-family: var(--en-font);
+    font-size: 30px;
+}
+
+#about {
+    background-color: var(--color-blue);
+    z-index: 50;
+}
+
+#about .text_container{
+    padding-top: 20vh;
+}
+.flex_container {
+    display: flex;
+}
+
+#activities {
+    background-image: url(images/bg.png);
+    background-repeat: repeat;
+    position: relative;
+    z-index: 100;
+}
+
+table {
+    width: 100%;
+    padding: 1rem;
+    border: 1.2px, solid, var(--color-white);
+    position: relative;
+    z-index: 900;
+}
+
+.text_container .notes {
+    font-size: 14px;
+    line-height: 1.5em;
+    margin: 0.25em 0;
+}
+
+.mountain_bg {
+    position: relative;
+}
+
+.tree_01 {
+    width: 5vw;
+    position: absolute;
+    top: 0vh;
+    left: 35vw;
+}
+
+.tree_02 {
+    width: 8vw;
+    position: absolute;
+    top: 3vh;
+    right: 20vw;
+}
+
+.tree_03 {
+    width: 5vw;
+    position: absolute;
+    top: 17vh;
+    right: 9vw;
+}
+
+.tree_04 {
+    width: 4.5vw;
+    position: absolute;
+    top: 35vh;
+    left: 26vw;
+}
+
+.tree_05 {
+    width: 7vw;
+    position: absolute;
+    top: 11vh;
+    left: 9vw;
+}
+
+.tree_06 {
+    width: 6vw;
+    position: absolute;
+    top: 24vh;
+    left: 45vw;
+}
+
+.tree_07 {
+    width: 4vw;
+    position: absolute;
+    top: 34vh;
+    right: 29vw;
+}
+
+.tree_08 {
+    width: 5vw;
+    position: absolute;
+    bottom: 0vh;
+    left: 4vw;
+}
+
+.human_img {
+    width: 20vw;
+    position: absolute;
+    bottom: -6vh;
+    right: 12vw;
+    z-index: 200;
+}
+
+.activities_navigation {
+    display: flex;
+    justify-content: space-around;
+}
+
+.activities_navigation li {
+    color: var(--color-white);
+}
+
+.warp {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slider_wrap {
+    display: flex;
+    column-gap: 20px;
+}
+
+.slider {
+    display: flex;
+    column-gap: 20px;
+    animation: LoopSlider 60s linear infinite;
+}
+
+.slider li img {
+    width: 20vw;
+}
+
+@keyframes LoopSlider {
+    0% {
+        transform: translate(0%);
+    }
+
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+.tent_img {
+    width: 60vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.starsky_img {
+    width: 20vw;
+    position: absolute;
+    top: 40vh;
+    right: 8vw;
+}
+
+.campfire_img {
+    width: 40vw;
+    position: absolute;
+    bottom: 10vh;
+    right: 12vw;
+}
+
+.seafood_img {
+    width: 30vw;
+    position: absolute;
+    top: 0;
+    left: 4vw;
+}
+
+.bbq_img {
+    width: 45vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.beef_img {
+    width: 18vw;
+    position: absolute;
+    bottom: 30vh;
+    left: 20vw;
+}
+
+#plan .text_container {
+    padding: 0;
+}
+
+.canoe_img {
+    width: 20vw;
+    position: absolute;
+    top: 50vh;
+    right: 20vw;
+    z-index: 300;
+}
+
+.river_bg {
+    position: absolute;
+    top: -30vh;
+    z-index: 200;
+}
+
+.river-bottom_bg {
+    position: absolute;
+    bottom: -0.01;
+    z-index: 300;
+}
+
+.price_container dl {
+    position: relative;
+    z-index: 900;
+    border: 1.2px, solid, var(--color-white);
+    padding: 0.5em 2em;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price_container {
+    padding-bottom: 10vh;
+}
+
+#access {
+    position: relative;
+    background-color: var(--color-beige);
+    position: relative;
+    z-index: 300;
+
+}
+
+#access .text_container h2,
+#access .text_container p,
+#access .text_container a {
+    color: var(--color-black);
+}
+
+.fishing_illust {
+    width: 20vw;
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+}
+
+.tent_illust {
+    width: 20vw;
+    position: absolute;
+    bottom: 20vh;
+    left: 10vw;
+}
+
+#access button {
+    border: none;
+    outline: none;
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 64px;
+    padding: 12px 0 12px 0;
+    font-family: var(--jp-font);
+    font-size: 18px;
+    text-align: center;
+    overflow-wrap: anywhere;
+    background-color: var(--color-blue);
+}
+
+.button_text {
+    display: block;
+}
+
+.button_arrow {
+    position: absolute;
+    right: 32px;
+    width: 20px;
+    aspect-ratio: 1;
+    vertical-align: center;
+    overflow: hidden;
+}
+
+@media (any-hover: hover) {
+    button_arrow {
+        transition: transform 0.4s;
+    }
+    button:hover{
+        opacity: 0.8;
+    }
+    button:hover .button_arrow {
+        transform: translateX(4px);
+    }
+}
+
+footer {
+    padding: 32px;
+    background-color: var(--color-blue);
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-white);
+}
+
+.footer_info {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+footer address,
+footer a {
+    color: var(--color-white);
+}
+
+.footer_logo {
+    width: 24vw;
+    margin-bottom: 32px;
+}
+
+.footer_navigation {
+    flex-basis: 60%;
+}
+
+.footer_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 3em;
+}
+
+@media (any-hover: hover) {
+    .footer_list li:hover{
+        opacity: 0.6;
+    }
+}
+.instagram_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.instagram_icon {
+    display: block;
+    width: 2em;
+    margin-right: 0.2em;
+}
+
+.instagram_link span {
+    line-height: 20px;
+}
+
+.star_leftArea {
+    position: relative;
+    flex-grow: 1;
+}
+.star_rightArea {
+    position: relative;
+    flex-grow: 1;
+}
+.star {
+    position: absolute;
+    width: 2vw;
+    animation: starTwinkle 2s ease forwards;
+  }
+  @keyframes starTwinkle {
+    0%{
+        opacity: 0;
+        transform: scale(0,0);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0,0);
+    }
+  }
